@@ -1,38 +1,31 @@
-A_section = "answer181912X966X27311A2"//or add code here
-B_section = //add code here
-C_section = //add code here
-  
-/*example code:
-answer181912X966X27311A2
-answer181912X966X27320A1
-Teacher Independent part of code: "answer181912X966X273",
-meaning independent_code = A_section[0:21]
-the initial value = int(A_section[21:22])
-section b value = int(B_section[21:22])
-section c value = int(C_section[21:22])
-*/
-  
-independent_code = A_section[0:21]
-the initial value = int(A_section[21:22])
-section b value = int(B_section[21:22])
-section c value = int(C_section[21:22])
+var final_id = ""
+var final_id2 = ""
+var answer = 1
+for(j = 20; j < 80; j++){
+    for(i = 100; i<=999; i++){
+        answer = Math.floor(Math.random()*5) + 1;
+        final_id = "answer623423X14" + j + "X40" + i + "A" + answer;
+        final_id2 = "answer623423X14" + j + "X41" + i + "A" + answer;
+        if(document.getElementById(final_id) == null && document.getElementById(final_id2) == null){
+            continue;
+        }else{
+            if(document.getElementById(final_id) == null){
+                document.getElementById(final_id2).checked = true;
+            }else{
+                document.getElementById(final_id).checked = true;
+            }
+        }
+    }
 
-for(var i = initial_value; i <= (initial_value + 19); i++){
-  question_answer = Math.floor(Math.random()*5) + 1;
-  output = independent_code+ i + "A" + question_answer;
-  document.getElementById(output).checked = true
+    for(k = 10; k <= 99; k++){
+        answer = Math.floor(Math.random()*5) + 1;
+        final_id = "answer623423X14" + j + "X410" + k + "A" + answer;
+        if(document.getElementById(final_id) == null){
+            continue;
+        }else{
+            document.getElementById(final_id).checked = true;
+        }
+    }
 }
+document.getElementById("movenextbtn").click();
 
-for(var i = section_b_value; i <= (section_b_value + 5); i++){
-  question_answer = Math.floor(Math.random()*5) + 1;
-  output = independent_code + i + "A" + question_answer;
-  document.getElementById(output).checked = true
-}
-
-for(var i = section_c_value; i <= section_c_value; i++){
-  question_answer = Math.floor(Math.random()*5) + 1;
-  output = independent_code + i + "A" + question_answer;
-  document.getElementById(output).checked = true
-}
-
-document.getElementById('movenextbtn').click();
